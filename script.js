@@ -2,19 +2,19 @@ const music = document.getElementById("egyptMusic");
 
 if (music) {
 
-    // Get the saved position
+    // get the saved position yeahhh
     const savedTime = localStorage.getItem("musicTime");
 
     if (savedTime) {
         music.currentTime = parseFloat(savedTime);
     }
 
-    // Save the position while the music plays
+    // save the position while the music plays i think
     music.addEventListener("timeupdate", function () {
         localStorage.setItem("musicTime", music.currentTime);
     });
 
-    // Remember whether the music was playing
+    // remember whether the music was playing ye
     music.addEventListener("play", function () {
         localStorage.setItem("musicPlaying", "true");
     });
@@ -23,7 +23,7 @@ if (music) {
         localStorage.setItem("musicPlaying", "false");
     });
 
-    // Try to resume automatically
+    // try to resume automatically yayyy
     if (localStorage.getItem("musicPlaying") === "true") {
         music.play().catch(function () {
             console.log("Browser blocked autoplay.");
